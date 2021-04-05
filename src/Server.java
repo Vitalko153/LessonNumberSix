@@ -11,7 +11,8 @@ public class Server {
     private static final int PORT = 8189;
 
     public static void main(String[] args) {
-        try(ServerSocket server = new ServerSocket(PORT)){
+        try{
+            ServerSocket server = new ServerSocket(PORT);
             System.out.println("Server started.");
             clientSocket = server.accept();
             System.out.println("Client connected: " + clientSocket.getRemoteSocketAddress());
@@ -28,6 +29,7 @@ public class Server {
                         e.printStackTrace();
                     }
             });
+
 
             threadRead.setDaemon(true);
             threadRead.start();
@@ -52,4 +54,5 @@ public class Server {
             }
         }
     }
+
 }

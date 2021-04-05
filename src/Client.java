@@ -11,7 +11,8 @@ public class Client {
 
     public static void main(String[] args) {
 
-            try{socket = new Socket(SERVER_ADDRESS, SERVER_PORT);
+            try{
+                socket = new Socket(SERVER_ADDRESS, SERVER_PORT);
                 System.out.println("Client connect to server." + socket.getRemoteSocketAddress());
                 DataInputStream inputMsg = new DataInputStream(socket.getInputStream());
                 DataOutputStream outMsg = new DataOutputStream(socket.getOutputStream());
@@ -26,6 +27,7 @@ public class Client {
                         e.printStackTrace();
                     }
                 });
+
 
                 threadRead.setDaemon(true);
                 threadRead.start();
@@ -50,4 +52,5 @@ public class Client {
                 }
             }
         }
+
     }
