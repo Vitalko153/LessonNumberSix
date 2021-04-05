@@ -28,6 +28,7 @@ public class Client {
                     }
                 });
 
+
                 threadRead.setDaemon(true);
                 threadRead.start();
 

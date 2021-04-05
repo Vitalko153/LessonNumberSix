@@ -30,6 +30,7 @@ public class Server {
                     }
             });
 
+
             threadRead.setDaemon(true);
             threadRead.start();
 
